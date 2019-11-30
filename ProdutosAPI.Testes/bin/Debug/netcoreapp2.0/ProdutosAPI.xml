@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProdutosAPI</name>
+    </assembly>
+    <members>
+        <member name="T:ProdutosApi.Controllers.ProdutosController">
+            <summary>
+            Controller de produto.
+            </summary>
+        </member>
+        <member name="M:ProdutosApi.Controllers.ProdutosController.Get(System.Int32,System.Int32,System.String,System.String,System.String,System.Nullable{System.Double})">
+            <summary> 
+            Obtém os produtos de forma paginada por nome e/ou por categoria e/ou marca e/ou preço
+            </summary>
+            <param name="limite">
+            Limite de produtos por consulta.
+            </param>
+            <param name="pagina">
+            Página.
+            </param>        
+            <param name="nome"> 
+            Obtém ou define o nome dos produtos.
+            </param>
+            <param name="categoria"> 
+            Obtém ou define a categoria dos produtos.
+            </param>
+            <param name="marca"> 
+            Obtém ou define a marca dos produtos.
+            </param>
+            <param name="preco"> 
+            Obtém ou define o preço dos produtos.
+            </param>
+            <returns>
+            Retorna a lista de produtos consultados.
+            </returns>
+        </member>
+        <member name="M:ProdutosApi.Controllers.ProdutosController.Get(System.String)">
+            <summary> 
+            Obtém o produto por identificador
+            </summary>
+            <param name="id">
+            Identificador do produto
+            </param>        
+            <returns>
+            Retorna o produto consultado.
+            </returns>
+        </member>
+        <member name="M:ProdutosApi.Controllers.ProdutosController.Post(ProdutosApi.Models.Produto)">
+            <summary> 
+            Adiciona um produto
+            </summary>
+            <param name="produto">
+            O produto
+            </param>        
+            <returns>
+            Retorna o produto adicionado
+            </returns>
+        </member>
+        <member name="M:ProdutosApi.Controllers.ProdutosController.Update(System.String,ProdutosApi.Models.Produto)">
+            <summary> 
+            Edita um produto
+            </summary>
+            <param name="id">
+            Identificador do produto a ser editado
+            </param>        
+            <param name="produto">
+            Produto com informações atualizadas
+            </param>
+            <returns>
+            Retorna resposta se foi editado ou não
+            </returns>
+        </member>
+        <member name="M:ProdutosApi.Controllers.ProdutosController.Delete(System.String)">
+            <summary> 
+            Exclui um produto
+            </summary>
+            <param name="id">
+            Identificador do produto a ser excluído
+            </param>                
+            <returns>
+            Retorna resposta se foi excluído ou não
+            </returns>
+        </member>
+        <member name="T:ProdutosApi.Models.Produto">
+            <summary>
+            Modelo de Produto
+            </summary>
+        </member>
+        <member name="P:ProdutosApi.Models.Produto.Id">
+            <summary>
+            Identificador do produto.
+            </summary>
+        </member>
+        <member name="P:ProdutosApi.Models.Produto.Nome">
+            <summary>
+            Nome do produto.
+            </summary>
+        </member>
+        <member name="P:ProdutosApi.Models.Produto.Descricao">
+            <summary>
+            Descrição do produto.
+            </summary>
+        </member>
+        <member name="P:ProdutosApi.Models.Produto.URLImagem">
+            <summary>
+            URL da imagem do produto.
+            </summary>
+        </member>
+        <member name="P:ProdutosApi.Models.Produto.Categoria">
+            <summary>
+            Categoria do produto.
+            </summary>
+        </member>
+        <member name="P:ProdutosApi.Models.Produto.Preco">
+            <summary>
+            Preço do produto.
+            </summary>
+        </member>
+        <member name="P:ProdutosApi.Models.Produto.Marca">
+            <summary>
+            Marca do produto.
+            </summary>
+        </member>
+        <member name="T:ProdutosApi.Services.ProdutoService">
+            <summary>
+            Serviço de Produto
+            </summary>
+        </member>
+        <member name="F:ProdutosApi.Services.ProdutoService._produtos">
+            <summary>
+            Lista de produtos
+            </summary>
+        </member>
+        <member name="M:ProdutosApi.Services.ProdutoService.#ctor(ProdutosApi.Models.IProdutosDatabaseSettings)">
+            <summary>
+            Construtor de serviço de produto
+            </summary>
+        </member>
+        <member name="M:ProdutosApi.Services.ProdutoService.Consultar(System.Int32,System.Int32,System.String,System.String,System.String,System.Nullable{System.Double})">
+            <summary> 
+            Obtém os produtos de forma paginada por nome e/ou por categoria e/ou marca e/ou preço
+            </summary>
+            <param name="limite">
+            Limite de produtos por consulta.
+            </param>
+            <param name="pagina">
+            Página.
+            </param>        
+            <param name="nome"> 
+            Obtém ou define o nome dos produtos.
+            </param>
+            <param name="categoria"> 
+            Obtém ou define a categoria dos produtos.
+            </param>
+            <param name="marca"> 
+            Obtém ou define a marca dos produtos.
+            </param>
+            <param name="preco"> 
+            Obtém ou define o preço dos produtos.
+            </param>
+            <returns>
+            Retorna a lista de produtos consultados.
+            </returns>
+        </member>
+        <member name="M:ProdutosApi.Services.ProdutoService.ConsultarPorIdentificador(System.String)">
+            <summary> 
+            Obtém o produto por identificador
+            </summary>
+            <param name="id">
+            Identificador do produto
+            </param>        
+            <returns>
+            Retorna o produto consultado.
+            </returns>
+        </member>
+        <member name="M:ProdutosApi.Services.ProdutoService.Adicionar(ProdutosApi.Models.Produto)">
+            <summary> 
+            Adiciona um produto
+            </summary>
+            <param name="produto">
+            O produto
+            </param>        
+            <returns>
+            Retorna o produto adicionado
+            </returns>
+        </member>
+        <member name="M:ProdutosApi.Services.ProdutoService.Editar(System.String,ProdutosApi.Models.Produto)">
+            <summary> 
+            Edita um produto
+            </summary>
+            <param name="id">
+            Identificador do produto a ser editado
+            </param>        
+            <param name="produtoAtualizado">
+            Produto com informações atualizadas
+            </param>        
+        </member>
+        <member name="M:ProdutosApi.Services.ProdutoService.Excluir(ProdutosApi.Models.Produto)">
+            <summary> 
+            Exclui um produto
+            </summary>
+            <param name="produtoRemovido">
+            Produto a ser excluido
+            </param>                        
+        </member>
+        <member name="M:ProdutosApi.Services.ProdutoService.Excluir(System.String)">
+            <summary> 
+            Exclui um produto
+            </summary>
+            <param name="id">
+            Identificador do produto a ser excluido
+            </param>  
+        </member>
+        <member name="T:ProdutosAPI.Services.IProdutoService">
+            <summary>
+            Interface de serviço de Produto
+            </summary>
+        </member>
+        <member name="M:ProdutosAPI.Services.IProdutoService.Consultar(System.Int32,System.Int32,System.String,System.String,System.String,System.Nullable{System.Double})">
+            <summary> 
+            Obtém os produtos de forma paginada por nome e/ou por categoria e/ou marca e/ou preço
+            </summary>
+            <param name="limite">
+            Limite de produtos por consulta.
+            </param>
+            <param name="pagina">
+            Página.
+            </param>        
+            <param name="nome"> 
+            Obtém ou define o nome dos produtos.
+            </param>
+            <param name="categoria"> 
+            Obtém ou define a categoria dos produtos.
+            </param>
+            <param name="marca"> 
+            Obtém ou define a marca dos produtos.
+            </param>
+            <param name="preco"> 
+            Obtém ou define o preço dos produtos.
+            </param>
+            <returns>
+            Retorna a lista de produtos consultados.
+            </returns>
+        </member>
+        <member name="M:ProdutosAPI.Services.IProdutoService.ConsultarPorIdentificador(System.String)">
+            <summary> 
+            Obtém o produto por identificador
+            </summary>
+            <param name="id">
+            Identificador do produto
+            </param>        
+            <returns>
+            Retorna o produto consultado.
+            </returns>
+        </member>
+        <member name="M:ProdutosAPI.Services.IProdutoService.Adicionar(ProdutosApi.Models.Produto)">
+            <summary> 
+            Adiciona um produto
+            </summary>
+            <param name="produto">
+            O produto
+            </param>        
+            <returns>
+            Retorna o produto adicionado
+            </returns>
+        </member>
+        <member name="M:ProdutosAPI.Services.IProdutoService.Editar(System.String,ProdutosApi.Models.Produto)">
+            <summary> 
+            Edita um produto
+            </summary>
+            <param name="id">
+            Identificador do produto a ser editado
+            </param>        
+            <param name="produtoAtualizado">
+            Produto com informações atualizadas
+            </param>        
+        </member>
+        <member name="M:ProdutosAPI.Services.IProdutoService.Excluir(ProdutosApi.Models.Produto)">
+            <summary> 
+            Exclui um produto
+            </summary>
+            <param name="produtoRemovido">
+            Produto a ser excluido
+            </param>                        
+        </member>
+        <member name="M:ProdutosAPI.Services.IProdutoService.Excluir(System.String)">
+            <summary> 
+            Exclui um produto
+            </summary>
+            <param name="id">
+            Identificador do produto a ser excluido
+            </param>                        
+        </member>
+    </members>
+</doc>
